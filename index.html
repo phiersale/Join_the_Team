@@ -3,294 +3,608 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us - PHIERS Movement | Make America Better and Healthier</title>
+    <title>Join the Team - PHIERS Movement</title>
+    <meta name="description" content="Join the PHIERS movement. Immediate roles available for organizing, outreach, technical support, and leadership.">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; line-height: 1.8; color: #333; }
-        
-        .header {
-            background: linear-gradient(135deg, #1a5490 0%, #0d3a7a 100%);
-            color: white; padding: 60px 40px; text-align: center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        .header h1 { font-size: 2.5em; margin-bottom: 15px; }
-        .header p { font-size: 1.2em; opacity: 0.95; }
-        .mabah-tag { font-size: 0.95em; color: #f39c12; margin-top: 15px; font-weight: bold; }
-        
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        
-        .section { margin-bottom: 50px; }
-        .section h2 { font-size: 2em; color: #1a5490; margin-bottom: 20px; border-bottom: 3px solid #1a5490; padding-bottom: 10px; }
-        
-        .will-intro {
-            background: #f5f5f5; padding: 40px; border-radius: 8px; border-left: 5px solid #c0392b;
-            margin: 30px 0; line-height: 1.9;
+        :root {
+            --primary-blue: #1e40af;
+            --accent-gold: #f59e0b;
+            --success-green: #059669;
+            --crisis-red: #dc2626;
+            --text-dark: #1f2937;
+            --bg-light: #f9fafb;
         }
         
-        .will-intro p { margin-bottom: 20px; font-size: 1.05em; }
-        .will-intro strong { color: #1a5490; }
-        
-        .photo-section {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0;
-            align-items: center;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
         }
         
-        .photo-container {
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #1e3a8a 100%);
+            color: white;
+            padding: 4rem 1rem;
             text-align: center;
         }
         
-        .photo-container img {
-            max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
         
-        .photo-container p { margin-top: 15px; font-size: 0.9em; color: #666; font-style: italic; }
-        
-        .why-box {
-            background: #e8f4f8; padding: 30px; border-radius: 8px; margin: 20px 0;
-            border-left: 5px solid #2c7aa3;
+        .hero .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
         }
         
-        .why-box p { margin-bottom: 15px; font-size: 1em; }
-        .why-box strong { color: #1a5490; }
-        
-        .role-box {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;
+        .hero .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 2rem;
         }
         
-        .role {
-            background: white; padding: 25px; border-radius: 8px; border: 2px solid #ecf0f1;
+        .urgent-banner {
+            background: var(--crisis-red);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
         }
         
-        .role h3 { color: #1a5490; margin-bottom: 15px; }
-        .role ul { margin-left: 20px; }
-        .role li { margin-bottom: 10px; }
-        
-        .cta {
-            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
-            color: white; padding: 30px; border-radius: 8px; text-align: center;
-            margin: 40px 0;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
         }
         
-        .cta h3 { margin-bottom: 15px; font-size: 1.4em; }
-        .cta p { margin-bottom: 20px; }
-        
-        .cta-button {
-            display: inline-block; background: white; color: #27ae60;
-            padding: 15px 40px; border-radius: 8px; text-decoration: none;
-            font-weight: bold; font-size: 1.1em; transition: background 0.3s;
-            margin: 10px 5px;
+        .section {
+            margin-bottom: 4rem;
         }
         
-        .cta-button:hover { background: #f5f5f5; }
+        .section h2 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent-gold);
+            padding-bottom: 0.5rem;
+        }
         
-        .footer {
-            background: #2c3e50; color: white; padding: 30px; text-align: center;
-            margin-top: 60px;
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .role-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .role-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+        }
+        
+        .role-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .role-card .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--accent-gold);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .role-card .badge.urgent {
+            background: var(--crisis-red);
+        }
+        
+        .role-card .badge.ongoing {
+            background: var(--success-green);
+        }
+        
+        .role-card ul {
+            margin: 1rem 0;
+        }
+        
+        .role-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .onboarding-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+        
+        .onboarding-box h3 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: all 0.3s;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background: #1e3a8a;
+            transform: translateY(-2px);
+        }
+        
+        .btn-gold {
+            background: var(--accent-gold);
+        }
+        
+        .btn-gold:hover {
+            background: #d97706;
+        }
+        
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
         }
         
         @media (max-width: 768px) {
-            .photo-section { grid-template-columns: 1fr; }
-            .role-box { grid-template-columns: 1fr; }
-            .header h1 { font-size: 1.8em; }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Join Us: Build PHIERS Together</h1>
-        <p>I Don't Build Alone. And Neither Can You.</p>
-        <p class="mabah-tag">Making America Better And Healthier (MABAH)</p>
+    <div class="hero">
+        <img src="PHIERS_Logo.png" alt="PHIERS Logo" style="max-width: 200px; height: auto; margin: 0 auto 1.5rem; display: block;">
+        <h1>Join the Team</h1>
+        <div class="tagline">Build the Movement That Changes Everything</div>
+        <div class="subtitle">We're not asking permission. We're building the solution ourselves. And we need YOU.</div>
+        <div style="margin-top: 2rem;">
+            <a href="https://discord.gg/narhDKJY" target="_blank" class="btn" style="font-size: 1.2rem; padding: 1.2rem 2.5rem;">Join Discord Now</a>
+        </div>
     </div>
-
+    
+    <div class="urgent-banner">
+        ⏰ URGENT: Congress winter break through Dec 31 - Immediate organizing roles needed NOW
+    </div>
+    
     <div class="container">
-        <!-- WILL'S STORY -->
+        <!-- WHY JOIN -->
         <div class="section">
-            <h2>My Story: Why I'm Building This From My Car</h2>
+            <h2>Why Join the PHIERS Movement</h2>
             
-            <div class="will-intro">
-                <p>
-                    My name is Will Price. I'm a strategic architect and problem solver. A month ago, I was fired for being a whistleblower. I worked as a live-in caregiver at a facility whose owner was harming vulnerable elderly people. I asked questions. I reported wrongdoing. And for protecting vulnerable people, I was retaliated against and kicked out.
-                </p>
+            <div class="roles-grid">
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 12px;">
+                    <h3 style="color: var(--success-green);">✅ Make Real Impact</h3>
+                    <p>Not symbolic activism. Mathematical leverage that forces Congressional response. Your work delivers $7,900/year savings to 100M+ Americans.</p>
+                </div>
                 
-                <p>
-                    Now I live in my car. 
-                </p>
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 12px;">
+                    <h3 style="color: var(--success-green);">✅ Own the Solution</h3>
+                    <p>Member-owned cooperative. You're not building someone else's company—you're building the infrastructure that serves YOU and your community.</p>
+                </div>
                 
-                <p>
-                    But here's what I know: For many years, I've been researching a path forward. Not just for myself, but for 244 million Americans ready for an alternative to what's destroying them. I've developed PHIERS—a self-sustaining healthcare system powered by collective buying through Mark Cuban.
-                </p>
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 12px;">
+                    <h3 style="color: var(--success-green);">✅ Build Real Skills</h3>
+                    <p>Community organizing, political strategy, cooperative economics, grassroots mobilization. Skills that matter for any cause you care about.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMMEDIATE ROLES -->
+        <div class="section">
+            <h2>🔥 Immediate Roles (Winter Break - NOW through Dec 31)</h2>
+            
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;"><strong>Congress is home. Representatives are vulnerable. We need organizers NOW to apply pressure during this critical window.</strong></p>
+            
+            <div class="roles-grid">
+                <div class="role-card">
+                    <span class="badge urgent">URGENT</span>
+                    <h3>Petition Signature Collectors</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Share petition link on social media daily</li>
+                        <li>Text/email petition to contacts</li>
+                        <li>Post in community groups, forums</li>
+                        <li>Track signatures from your area</li>
+                    </ul>
+                    <p><strong>Goal:</strong> 25,000 signatures per Congressional district (3.5% threshold)</p>
+                    <p><strong>Time:</strong> 5-10 hours/week</p>
+                </div>
                 
-                <p>
-                    The proof is real. The math is validated. The timing is perfect (Congress just failed on healthcare). But <strong>I can't build this alone.</strong>
-                </p>
-            </div>
-
-            <div class="photo-section">
-                <div class="photo-container">
-                    <img src="will-in-car.jpg" alt="Will Price building PHIERS from his car">
-                    <p>Building PHIERS from the front seat - this is real</p>
+                <div class="role-card">
+                    <span class="badge urgent">URGENT</span>
+                    <h3>Social Media Amplifiers</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Post PHIERS content 2-3x daily</li>
+                        <li>Tag representatives in posts</li>
+                        <li>Share GFM campaign</li>
+                        <li>Engage with related hashtags</li>
+                        <li>Drive traffic to petition/survey</li>
+                    </ul>
+                    <p><strong>Goal:</strong> Go viral during winter break</p>
+                    <p><strong>Time:</strong> 1-2 hours/day</p>
                 </div>
-                <div class="photo-container">
-                    <img src="will-headshot.jpg" alt="Will Price - Strategic Architect">
-                    <p>14 years of research. One clear solution.</p>
+                
+                <div class="role-card">
+                    <span class="badge urgent">URGENT</span>
+                    <h3>Town Hall Organizers</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Find January town hall schedules</li>
+                        <li>Coordinate constituent attendance</li>
+                        <li>Prepare pointed questions about PHIERS</li>
+                        <li>Record/share representative responses</li>
+                        <li>Create local pressure</li>
+                    </ul>
+                    <p><strong>Goal:</strong> Packed town halls with organized PHIERS supporters</p>
+                    <p><strong>Time:</strong> 3-5 hours/week + town hall attendance</p>
+                </div>
+                
+                <div class="role-card">
+                    <span class="badge urgent">URGENT</span>
+                    <h3>Local Media Outreach</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Contact hometown newspapers</li>
+                        <li>Pitch "local residents organize for healthcare" stories</li>
+                        <li>Arrange interviews with petition signers</li>
+                        <li>Get PHIERS into local news cycle</li>
+                    </ul>
+                    <p><strong>Goal:</strong> Media coverage in every Congressional district</p>
+                    <p><strong>Time:</strong> 5-10 hours/week</p>
                 </div>
             </div>
         </div>
 
-        <!-- WHY WHISTLEBLOWER MATTERS -->
+        <!-- ONGOING ROLES -->
         <div class="section">
-            <h2>Why I'm a Whistleblower Fighting for This</h2>
+            <h2>💼 Ongoing Roles (Post-Winter Break)</h2>
             
-            <div class="why-box">
-                <p>
-                    <strong>I saw healthcare destroy people.</strong> I watched families lose everything to medical debt. I watched people choose between buying medicine and buying food. I watched the system choose corporate profit over human life.
-                </p>
-            </div>
-
-            <div class="why-box">
-                <p>
-                    <strong>When I spoke up, the system punished me.</strong> Not because I was wrong. But because I threatened the people profiting from that broken system. Whistleblowers get fired. We get silenced. We end up homeless. That's how the system protects itself.
-                </p>
-            </div>
-
-            <div class="why-box">
-                <p>
-                    <strong>Now I'm solving it from the front seat of my car.</strong> Not waiting for government. Not waiting for legislation. Not waiting for politicians to find political will. I'm building the solution that 244 million Americans are ready for.
-                </p>
-            </div>
-
-            <div class="why-box">
-                <p>
-                    <strong>But it can't happen without you.</strong> I can do the research. I can design the system. I can show you it works. But I can't build it alone. This needs movement. This needs 3.5% of people in each congressional district saying "we want this" loud enough that politicians have to listen.
-                </p>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <span class="badge ongoing">ONGOING</span>
+                    <h3>Community Organizers</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Build local PHIERS groups</li>
+                        <li>Host information meetings</li>
+                        <li>Coordinate petition drives</li>
+                        <li>Train new organizers</li>
+                        <li>Maintain momentum</li>
+                    </ul>
+                    <p><strong>Time:</strong> 10-20 hours/week</p>
+                </div>
+                
+                <div class="role-card">
+                    <span class="badge ongoing">ONGOING</span>
+                    <h3>Content Creators</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Create explainer videos</li>
+                        <li>Design infographics</li>
+                        <li>Write blog posts/articles</li>
+                        <li>Develop social media content</li>
+                        <li>Make PHIERS understandable</li>
+                    </ul>
+                    <p><strong>Skills:</strong> Video editing, graphic design, writing</p>
+                    <p><strong>Time:</strong> Flexible, project-based</p>
+                </div>
+                
+                <div class="role-card">
+                    <span class="badge ongoing">ONGOING</span>
+                    <h3>Technical Support</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Maintain websites</li>
+                        <li>Manage databases</li>
+                        <li>Improve petition/survey systems</li>
+                        <li>Build organizing tools</li>
+                        <li>Keep infrastructure running</li>
+                    </ul>
+                    <p><strong>Skills:</strong> Web development, databases, systems</p>
+                    <p><strong>Time:</strong> 5-15 hours/week</p>
+                </div>
+                
+                <div class="role-card">
+                    <span class="badge ongoing">ONGOING</span>
+                    <h3>Data Analysts</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Track petition signatures by district</li>
+                        <li>Analyze survey responses</li>
+                        <li>Identify organizing targets</li>
+                        <li>Create progress dashboards</li>
+                        <li>Show data-driven impact</li>
+                    </ul>
+                    <p><strong>Skills:</strong> Data analysis, visualization, spreadsheets</p>
+                    <p><strong>Time:</strong> 5-10 hours/week</p>
+                </div>
+                
+                <div class="role-card">
+                    <span class="badge ongoing">ONGOING</span>
+                    <h3>Coalition Builders</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Reach out to unions, advocacy groups</li>
+                        <li>Build cross-partisan alliances</li>
+                        <li>Coordinate with allied organizations</li>
+                        <li>Expand PHIERS network</li>
+                    </ul>
+                    <p><strong>Skills:</strong> Relationship building, diplomacy</p>
+                    <p><strong>Time:</strong> 10-15 hours/week</p>
+                </div>
+                
+                <div class="role-card">
+                    <span class="badge ongoing">ONGOING</span>
+                    <h3>VA Worker Recruiters</h3>
+                    <p><strong>SPECIAL OPPORTUNITY:</strong> Trump eliminating 30K VA jobs</p>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Recruit displaced VA workers</li>
+                        <li>Show how PHIERS creates AI-resistant jobs</li>
+                        <li>Connect veterans to opportunities</li>
+                        <li>Honor commitment to those who served</li>
+                    </ul>
+                    <p><strong>Time:</strong> 5-10 hours/week</p>
+                </div>
             </div>
         </div>
 
-        <!-- HOW YOU HELP -->
+        <!-- LEADERSHIP ROLES -->
         <div class="section">
-            <h2>How You Help Build This</h2>
-
-            <div class="role-box">
-                <div class="role">
-                    <h3>💰 Donors & Supporters</h3>
-                    <p style="margin-bottom: 15px;">Help fund the media launch to reach 55+ million people</p>
-                    <ul>
-                        <li>$10K target triggers immediate launch</li>
-                        <li>$5K for media/outreach</li>
-                        <li>$5K for survival (car repair, food, internet)</li>
-                        <li>Directly accelerates timeline</li>
-                    </ul>
-                </div>
-
-                <div class="role">
-                    <h3>🤝 Organizers & Movement Leaders</h3>
-                    <p style="margin-bottom: 15px;">Help build the 3.5% threshold in your communities</p>
-                    <ul>
-                        <li>3.5% of population = unstoppable</li>
-                        <li>Builds political leverage</li>
-                        <li>Forces representative support</li>
-                        <li>We provide materials + training</li>
-                    </ul>
-                </div>
-
-                <div class="role">
-                    <h3>📢 Communicators & Creators</h3>
-                    <p style="margin-bottom: 15px;">Help spread the message to your networks</p>
-                    <ul>
-                        <li>Share videos on social media</li>
-                        <li>Write about PHIERS</li>
-                        <li>Create content in your voice</li>
-                        <li>Reach audiences we can't</li>
-                    </ul>
-                </div>
-
-                <div class="role">
-                    <h3>🏛️ Politicians & Decision-Makers</h3>
-                    <p style="margin-bottom: 15px;">Help implement the solution constituents want</p>
-                    <ul>
-                        <li>Support your constituents</li>
-                        <li>Get ahead of the movement</li>
-                        <li>Claim credit for results</li>
-                        <li>Build political capital</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- WHY NOW -->
-        <div class="section">
-            <h2>Why This Moment is Critical</h2>
-
-            <div class="why-box">
-                <p>
-                    <strong>Congress just failed.</strong> Today (December 11), the Senate rejected both healthcare plans. Both failed. Now 22 million Americans face DOUBLED healthcare costs on January 1st. That's 20 days away. Government can't fix this. But cooperation can.
-                </p>
-            </div>
-
-            <div class="why-box">
-                <p>
-                    <strong>People are desperate for solutions NOW.</strong> AI is destroying jobs. Inflation is destroying purchasing power. DOGE is shredding the safety net. This isn't abstract anymore. This is immediate pain. This is maximum motivation to try something new.
-                </p>
-            </div>
-
-            <div class="why-box">
-                <p>
-                    <strong>The proof is operational.</strong> Mark Cuban's prescriptions savings work. Telehealth covers what most people need. The math funds everything. This isn't theory—it's proven and ready to scale.
-                </p>
-            </div>
-
-            <div class="why-box">
-                <p>
-                    <strong>The timing is perfect.</strong> The crisis creates urgency. The proof eliminates doubt. The solution is ready to launch. All we need is enough people saying "yes" to make it inevitable.
-                </p>
-            </div>
-        </div>
-
-        <!-- THE ASK -->
-        <div class="cta">
-            <h3>I Can't Do This Without You</h3>
-            <p>I'm a whistleblower living in my car, proving that cooperation beats extraction. You're people who want real solutions, not political theater.</p>
+            <h2>🌟 Leadership Roles (High Impact)</h2>
             
-            <p style="font-size: 1.1em; margin-top: 20px;">
-                <strong>Help me reach 55+ million people before January 1st.</strong>
-            </p>
+            <div class="highlight-box">
+                <p><strong>These roles require significant commitment but create outsized impact.</strong> If you have expertise or passion for leading, we need you.</p>
+            </div>
             
-            <a href="https://www.gofundme.com/f/homeless-but-hopeful-affordable-healthcare-good-jobs-ubi" class="cta-button">💰 Fund the Launch on GFM</a>
-            <br><br>
-            <a href="https://forms.gle/wtcGaADjp6MnAveH9" class="cta-button">✊ Sign the Petition</a>
-            <br><br>
-            <a href="mailto:will@phiers.org" class="cta-button">🤝 Join the Organizing Team</a>
-
-            <p style="margin-top: 30px; font-weight: bold; color: white; font-size: 1.1em;">
-                Together, we Make America Better and Healthier (MABAH)
-            </p>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <span class="badge">LEADERSHIP</span>
+                    <h3>State Coordinators</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Lead PHIERS organizing in your state</li>
+                        <li>Coordinate district organizers</li>
+                        <li>Track state-level progress</li>
+                        <li>Interface with state representatives</li>
+                        <li>Build state-level infrastructure</li>
+                    </ul>
+                    <p><strong>Commitment:</strong> 20-30 hours/week</p>
+                </div>
+                
+                <div class="role-card">
+                    <span class="badge">LEADERSHIP</span>
+                    <h3>Campaign Strategists</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Develop organizing strategies</li>
+                        <li>Plan town hall pressure campaigns</li>
+                        <li>Design petition/survey tactics</li>
+                        <li>Train organizers on strategy</li>
+                        <li>Adapt tactics based on results</li>
+                    </ul>
+                    <p><strong>Skills:</strong> Political strategy, organizing experience</p>
+                    <p><strong>Commitment:</strong> 15-25 hours/week</p>
+                </div>
+                
+                <div class="role-card">
+                    <span class="badge">LEADERSHIP</span>
+                    <h3>Communications Directors</h3>
+                    <p><strong>What you do:</strong></p>
+                    <ul>
+                        <li>Manage messaging strategy</li>
+                        <li>Coordinate media outreach</li>
+                        <li>Train spokespeople</li>
+                        <li>Handle crisis communications</li>
+                        <li>Build narrative momentum</li>
+                    </ul>
+                    <p><strong>Skills:</strong> PR, media relations, messaging</p>
+                    <p><strong>Commitment:</strong> 20-30 hours/week</p>
+                </div>
+            </div>
         </div>
 
-        <!-- THE MOVEMENT -->
+        <!-- ONBOARDING -->
+        <div class="onboarding-box">
+            <h3>🚀 How to Get Started (Simple 4-Step Process)</h3>
+            
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Join Discord</h4>
+                    <p>Connect with organizers, get assignments, coordinate action</p>
+                    <a href="https://discord.gg/narhDKJY" target="_blank" class="btn">Join Now</a>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Sign & Survey</h4>
+                    <p>Lead by example—sign petition, complete survey</p>
+                    <a href="https://docs.google.com/forms/d/1MYeQcmw8ZDXHwcjpEw5hbQCWP4FdHdyoHTo1XcAiTRA/edit" target="_blank" class="btn">Sign</a>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Choose Role</h4>
+                    <p>Pick what fits your skills and time</p>
+                    <p style="margin-top: 1rem;"><strong>Introduce yourself in Discord #introductions</strong></p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">Start Working</h4>
+                    <p>Get assignments, coordinate with team, create impact</p>
+                    <p style="margin-top: 1rem;"><strong>Training provided in Discord</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- WHAT YOU GET -->
         <div class="section">
-            <h2>What We're Building Together</h2>
+            <h2>What You Get As a PHIERS Team Member</h2>
+            
+            <div class="roles-grid">
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 12px;">
+                    <h3>🎓 Skills Development</h3>
+                    <ul>
+                        <li>Community organizing training</li>
+                        <li>Political strategy experience</li>
+                        <li>Coalition building skills</li>
+                        <li>Media relations practice</li>
+                        <li>Data analysis capabilities</li>
+                    </ul>
+                </div>
+                
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 12px;">
+                    <h3>🤝 Community & Network</h3>
+                    <ul>
+                        <li>Work with passionate organizers</li>
+                        <li>Build nationwide connections</li>
+                        <li>Join supportive community</li>
+                        <li>Meet people who care</li>
+                        <li>Create lasting friendships</li>
+                    </ul>
+                </div>
+                
+                <div style="background: var(--bg-light); padding: 2rem; border-radius: 12px;">
+                    <h3>💪 Real Impact</h3>
+                    <ul>
+                        <li>See your work change policy</li>
+                        <li>Deliver $7,900 savings to millions</li>
+                        <li>Force Congressional accountability</li>
+                        <li>Build lasting infrastructure</li>
+                        <li>Create systemic change</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-            <p style="margin-bottom: 20px;">This isn't about me surviving. It's about proving that:</p>
+        <!-- COMMITMENT LEVELS -->
+        <div class="section">
+            <h2>Find Your Commitment Level</h2>
+            
+            <p style="margin-bottom: 2rem;">We need everyone—from people who can spare 1 hour/week to those ready to go full-time. Every role matters.</p>
+            
+            <div style="background: white; border: 2px solid var(--primary-blue); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--primary-blue);">⚡ 1-3 Hours/Week (Micro-Volunteer)</h3>
+                <p><strong>Perfect for:</strong> People with limited time but want to help</p>
+                <p><strong>Roles:</strong> Social media sharing, petition forwarding, attending town halls</p>
+                <p><strong>Impact:</strong> Your small actions compound with thousands of others</p>
+            </div>
+            
+            <div style="background: white; border: 2px solid var(--primary-blue); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--primary-blue);">🔥 5-10 Hours/Week (Core Volunteer)</h3>
+                <p><strong>Perfect for:</strong> Regular commitment, consistent work</p>
+                <p><strong>Roles:</strong> Petition collection, content creation, data analysis, local organizing</p>
+                <p><strong>Impact:</strong> Build significant momentum in your area</p>
+            </div>
+            
+            <div style="background: white; border: 2px solid var(--primary-blue); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--primary-blue);">⚔️ 15-25 Hours/Week (Power Organizer)</h3>
+                <p><strong>Perfect for:</strong> Deep involvement, leadership potential</p>
+                <p><strong>Roles:</strong> State coordinator, campaign strategist, communications director</p>
+                <p><strong>Impact:</strong> Lead organizing in entire states or focus areas</p>
+            </div>
+            
+            <div style="background: white; border: 2px solid var(--primary-blue); border-radius: 12px; padding: 2rem;">
+                <h3 style="color: var(--primary-blue);">🚀 30+ Hours/Week (Full-Time Movement Builder)</h3>
+                <p><strong>Perfect for:</strong> Full commitment, maximum impact</p>
+                <p><strong>Roles:</strong> National coordination, major strategy, infrastructure building</p>
+                <p><strong>Impact:</strong> Shape the entire movement's direction and success</p>
+                <p><strong>Note:</strong> At 3.5%, cooperative savings can fund full-time positions</p>
+            </div>
+        </div>
 
-            <ul style="margin-left: 20px; font-size: 1.05em; line-height: 2;">
-                <li><strong>Whistleblowers deserve support, not homelessness</strong></li>
-                <li><strong>Collective buying power beats corporate extraction</strong></li>
-                <li><strong>Healthcare should be affordable for everyone</strong></li>
-                <li><strong>3.5% of people organizing together is unstoppable</strong></li>
-                <li><strong>Cooperation beats legislation every time</strong></li>
-                <li><strong>We the People ARE stronger than the system</strong></li>
-            </ul>
-
-            <p style="margin-top: 30px; font-size: 1.05em;">
-                That's what we're building. Not a charity. A movement. Not hope. Mathematical certainty. Not waiting for permission. Taking power back through collective choice.
-            </p>
+        <!-- FINAL CTA -->
+        <div style="background: linear-gradient(135deg, var(--primary-blue) 0%, #1e3a8a 100%); color: white; padding: 4rem 2rem; border-radius: 12px; text-align: center; margin-top: 4rem;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">Ready to Build the Movement?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Congress winter break through Dec 31. The organizing window is OPEN.</p>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem;">We don't ask permission. We build the solution ourselves.</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                <a href="https://discord.gg/narhDKJY" target="_blank" class="btn" style="font-size: 1.2rem; padding: 1.2rem 2.5rem; background: var(--accent-gold);">Join Discord Community</a>
+                <a href="https://docs.google.com/forms/d/1MYeQcmw8ZDXHwcjpEw5hbQCWP4FdHdyoHTo1XcAiTRA/edit" target="_blank" class="btn" style="font-size: 1.2rem; padding: 1.2rem 2.5rem;">Sign Petition</a>
+                <a href="https://phiers.org" target="_blank" class="btn" style="font-size: 1.2rem; padding: 1.2rem 2.5rem;">Learn More</a>
+            </div>
+            
+            <p style="margin-top: 3rem; font-size: 1.1rem; opacity: 0.9;">Questions? Contact: <a href="mailto:contact@phiers.org" style="color: var(--accent-gold);">contact@phiers.org</a></p>
         </div>
     </div>
-
-    <div class="footer">
-        <p>© PHIERS.org Since 2014 - Original Concept - All Rights Reserved</p>
-        <p>Prior art documented. PHIERS™, PHIERSale™, PHIERSWorks™, and MABAH™ are protected marks.</p>
-        <p style="margin-top: 20px;">
-            <strong>Will Price</strong> | Whistleblower & Strategic Problem Solver<br>
-            <a href="mailto:will@phiers.org" style="color: #3498db;"><span class="__cf_email__" data-cfemail="a0d7c9cccce0d0c8c9c5d2d38ecfd2c7">[email&#160;protected]</span></a><br>
-            <a href="https:
+</body>
+</html>
